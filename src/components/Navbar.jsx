@@ -13,6 +13,7 @@ const MyNavbar = () => {
           <Nav className="navabar">
           <Navbar.Brand href="#home">Pizzería Mamma Mía</Navbar.Brand>
             <Nav.Link href="#home">🍕Home</Nav.Link>
+            {/*Hito 1 - condicional si el token es false/true que muestre diferentes opciones*/}
             {token ? (
                <>
             <Nav.Link href="#profile">🔒Profile</Nav.Link>
@@ -26,6 +27,7 @@ const MyNavbar = () => {
              )}
           </Nav>
             <div className='navtotal'>
+               {/*Hito 1 - toLocaleString para mostrar número total*/}
             <Nav.Link href="#total">🛒 Total: ${total.toLocaleString()} </Nav.Link>
             </div>
         </Container>

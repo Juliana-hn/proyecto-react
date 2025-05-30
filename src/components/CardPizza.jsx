@@ -1,5 +1,7 @@
 import '../assets/styles/CardPizza.css';
 
+{/*Hito 1 - desestructurizar prop y crear plantilla de card*/}
+
 const CardPizza = ({name, price, ingredients, img}) => {
   return (
     <>
@@ -8,7 +10,7 @@ const CardPizza = ({name, price, ingredients, img}) => {
         <h3>{name}</h3>
         <hr />
         <h4>Ingredientes: </h4>
-        <p>🍕 {ingredients}</p>
+        <p>🍕{ingredients}</p>
         <hr />
         <h4>Precio: ${price}</h4>
         <div className='buttons'>
