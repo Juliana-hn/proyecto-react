@@ -8,7 +8,7 @@ const Register = () => {
     const [password, setPassword] = useState('')
     const [confirm, setConfirm] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
            e.preventDefault()
 
       // Hito 2: Validaciones
@@ -28,6 +28,9 @@ const Register = () => {
       }
 
       toast.success('¡Registro exitoso!');
+      setEmail('')
+      setPassword('')
+      setConfirm('')
       }
     
   return (

@@ -6,6 +6,9 @@
     text-align: center;
     align-content: center;
 }
+li{
+    list-style: none;
+}
 .buttons{
     display: flex;
     justify-content: center;

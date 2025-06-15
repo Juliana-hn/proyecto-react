@@ -1,11 +1,13 @@
 import Header from './Header'
 import CardPizza from './CardPizza'
+import { pizzas } from '../../pizzas'
 
 const Home = () => {
   return (
     <>
     <Header />
     <main className='cardContainer'>
+    {/*Hito 1: 
     <CardPizza 
         name="Napolitana"
         price={5950}
@@ -24,6 +26,19 @@ const Home = () => {
         ingredients={["mozzarella, ", "pepperoni, ", "orégano"]}
         img="https://firebasestorage.googleapis.com/v0/b/apis-varias-mias.appspot.com/o/pizzeria%2Fpizza-1239077_640_com.jpg?alt=media&token=e7cde87a-08d5-4040-ac54-90f6c31eb3e3"
         />
+      */}
+
+      {/*Hito 3* - Recorrer el array de pizzas.js y renderizar el componente con props.*/}
+      {pizzas.map((pizza) => (
+        <CardPizza 
+          img={pizza.img}
+          key={pizza.id}
+          name={pizza.name}
+          price={pizza.price}
+          ingredients={pizza.ingredients}
+          desc={pizza.desc}
+          />
+      ))}
         </main>
     </>
   )

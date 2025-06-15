@@ -1,0 +1,78 @@
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+}
+.cartContainer img {
+    width: 350px;
+}
+.itemContainer{
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    padding: 20px;
+    margin-top: 10px;
+}
+.detalles{
+    padding: 50px;
+}
+.btnMasMenos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.btnDisminuir {
+    background-color: #e74c3c;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnDisminuir:hover {
+    background-color: #c0392b;
+}
+
+.btnAumentar {
+    background-color: #27ae60;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnAumentar:hover {
+    background-color: #1e8449;
+}
+
+.btnComprar {
+    background-color: #2980b9;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btnComprar:hover {
+    background-color: #21618c;
+}
+
+.totalContainer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+}

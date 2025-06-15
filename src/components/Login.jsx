@@ -7,7 +7,7 @@ const Login = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
    // Hito 2: Validaciones
    
@@ -20,6 +20,8 @@ const Login = () => {
         return;
     }
     toast.success('¡Login exitoso!');
+    setEmail('')
+    setPassword('')
     };
 
   return (
