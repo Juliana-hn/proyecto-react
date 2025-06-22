@@ -7,7 +7,7 @@ const CardPizza = ({name, price, ingredients, img, desc}) => {
   return (
     <>
     <div className='card'>
-        <img src= {img} alt={name} />
+        <img src= {img} alt={name}/>
         <h3>{name}</h3>
         <hr />
         <p>Descripción: {desc}</p>

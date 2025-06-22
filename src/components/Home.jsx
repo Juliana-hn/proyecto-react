@@ -1,8 +1,29 @@
 import Header from './Header'
 import CardPizza from './CardPizza'
-import { pizzas } from '../../pizzas'
+//import { pizzas } from '../../pizzas'
+import {useState, useEffect} from 'react'
+import React from 'react'
 
 const Home = () => {
+
+  {/*Hito 4. Uso de useEffect y API */}
+  const [pizzas, setPizzas] = useState ([])
+
+  useEffect (()=>{
+    getApi()
+  }, [])
+
+  const url = 'http://localhost:5000/api/pizzas'
+
+  const getApi = async () =>{
+    try{
+      const res = await fetch (url)
+      const data = await res.json()
+      setPizzas(data)
+  } catch(error) {
+    console.log(error)
+  }
+}
   return (
     <>
     <Header />
@@ -28,7 +49,8 @@ const Home = () => {
         />
       */}
 
-      {/*Hito 3* - Recorrer el array de pizzas.js y renderizar el componente con props.*/}
+      {/*Hito 3* - Recorrer el array de pizzas.js y renderizar el componente con props.
+      Hito 4 seguimos recorriendo el array pero desde la API.*/}
       {pizzas.map((pizza) => (
         <CardPizza 
           img={pizza.img}

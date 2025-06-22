@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/Home'
 import Footer from './components/Footer'
 import MyNavbar from './components/Navbar'
-import Cart from './components/Cart';
+import Pizzas from './components/Pizzas';
+//import Cart from './components/Cart';
 //import Register from './components/Register'
 //import Login from './components/Login'
 
@@ -15,8 +16,9 @@ const App = () => {
     <MyNavbar/>
     <Home />
     {/*<Login />
-    <Register />*/}
-    <Cart />
+    <Register />
+    <Cart />*/}
+    <Pizzas />
     <Footer /> 
     <ToastContainer position="top-center" />
     </>
