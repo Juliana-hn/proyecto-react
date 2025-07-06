@@ -3,10 +3,14 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom'
 import '../assets/styles/Navbar.css';
+import { useContext } from 'react';
+import { MyContext } from '../context/CartContext';
 
 const MyNavbar = () => {
-    const total = 25000;
-    const token = false;    
+  {/*Hito 6. Usando useContext para cambiar valor total también en el navbar */}
+  const { calcularTotal } = useContext(MyContext)
+  const total = calcularTotal()
+  const token = false
     
   return (
     <>

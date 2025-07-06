@@ -1,44 +1,21 @@
 import { pizzaCart } from '../../pizzas'
-import { useState } from 'react'
+import { useContext } from 'react'
 import '../assets/styles/Cart.css';
+import { MyContext } from '../context/CartContext';
+
 
 {/* Hito 3: Renderización dinámica de componentes:
 - Recorre el array de pizzaCart y muestra la información de cada pizza en el carrito
 - Agrega botones para aumentar y disminuir la cantidad de pizzas en el carrito. En caso de ser 0 se elimina
 - Calcula total de la compra
+Hito 6: cambiar los useState por useContext y pasar las funciones a CartContext
 */}
 
+
 const Cart = () => {
-  const [cart, setCart] = useState(pizzaCart)
+  const { cart, aumentar, disminuir, calcularTotal } = useContext(MyContext)
 
-  const aumentar = (id) => {
-    const nuevoCart = cart.map((item)=>{
-      if (item.id === id)
-        return {
-          ...item, 
-          count: item.count+1
-        }
-      return item})
-      setCart(nuevoCart)
-    }
-
-  const disminuir = (id) => {
-    const nuevoCart = cart.map((item)=>{
-      if (item.id === id)
-        return {
-          ...item, 
-          count: item.count-1
-        }
-      return item}).filter(item => item.count > 0)
-        setCart(nuevoCart)
-    }
-  
-  const calcularTotal = (cart) => {
-    return cart.reduce((total, producto) => {
-      return total + producto.price * producto.count
-    }, 0)
-  }
-  const total = calcularTotal(cart)
+  const total = calcularTotal()
 
   return (
     <>

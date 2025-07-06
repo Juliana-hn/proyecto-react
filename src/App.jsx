@@ -11,12 +11,15 @@ import Cart from './pages/Cart';
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Profile from './components/Profile';
+import CartProvider from './context/CartContext';
+
 
 
 const App = () => {
   return (
     <>
     <BrowserRouter> 
+      <CartProvider>
       <MyNavbar/>
         <Routes>
           <Route path='/' element={<Home />} />    
@@ -27,6 +30,7 @@ const App = () => {
           <Route path='/pizza/p001 ' element={<Pizzas />} />  
           <Route path='*' element={ <NotFound />}/>
         </Routes>  
+      </CartProvider>
         <ToastContainer position="top-center" />
         <Footer /> 
     </BrowserRouter>

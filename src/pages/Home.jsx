@@ -1,7 +1,7 @@
 import Header from '../components/Header'
 import CardPizza from '../components/CardPizza'
 //import { pizzas } from '../../pizzas'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import React from 'react'
 
 const Home = () => {
@@ -50,7 +50,8 @@ const Home = () => {
       */}
 
       {/*Hito 3* - Recorrer el array de pizzas.js y renderizar el componente con props.
-      Hito 4 seguimos recorriendo el array pero desde la API.*/}
+      Hito 4 seguimos recorriendo el array pero desde la API. 
+      Hito 6 añadiendo useContext*/}
       {pizzas.map((pizza) => (
         <CardPizza 
           img={pizza.img}
@@ -59,6 +60,7 @@ const Home = () => {
           price={pizza.price}
           ingredients={pizza.ingredients}
           desc={pizza.desc}
+          pizza={pizza} 
           />
       ))}
         </main>
