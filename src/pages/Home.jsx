@@ -54,6 +54,7 @@ const Home = () => {
       Hito 6 añadiendo useContext*/}
       {pizzas.map((pizza) => (
         <CardPizza 
+          id={pizza.id}
           img={pizza.img}
           key={pizza.id}
           name={pizza.name}

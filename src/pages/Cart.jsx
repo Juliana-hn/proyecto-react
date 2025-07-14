@@ -2,6 +2,7 @@ import { pizzaCart } from '../../pizzas'
 import { useContext } from 'react'
 import '../assets/styles/Cart.css';
 import { MyContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
 
 
 {/* Hito 3: Renderización dinámica de componentes:
@@ -14,8 +15,8 @@ Hito 6: cambiar los useState por useContext y pasar las funciones a CartContext
 
 const Cart = () => {
   const { cart, aumentar, disminuir, calcularTotal } = useContext(MyContext)
-
   const total = calcularTotal()
+  const { token } = useContext(UserContext);
 
   return (
     <>
@@ -46,7 +47,7 @@ const Cart = () => {
         
         <div className="totalContainer">
           <h2>Total: ${total}</h2>
-          <button className='btnComprar'>Comprar</button>
+          <button className='btnComprar' disabled={!token}>Comprar</button>
         </div>
       </div>
     </div>

@@ -1,16 +1,20 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import '../assets/styles/Navbar.css';
 import { useContext } from 'react';
 import { MyContext } from '../context/CartContext';
+import { UserContext } from '../context/UserContext';
+
 
 const MyNavbar = () => {
   {/*Hito 6. Usando useContext para cambiar valor total también en el navbar */}
   const { calcularTotal } = useContext(MyContext)
   const total = calcularTotal()
-  const token = false
+  const { token, logout } = useContext(UserContext); 
+  {/*Hito 7. Cambios NavLink para aplicar estilo visual*/}
+  const validateRoot = ({isActive}) => isActive ? 'menuActive': 'menu'
     
   return (
     <>
@@ -18,23 +22,23 @@ const MyNavbar = () => {
         <Container>
           <Nav className="navbar">
           <Navbar.Brand>Pizzería Mamma Mía</Navbar.Brand>
-            <Link to='/'>🍕Home</Link>
+            <NavLink to='/' className={validateRoot}>🍕Home</NavLink>
             {/*Hito 1 - condicional si el token es false/true que muestre diferentes opciones*/}
             {token ? (
                <>
-            <Link to='/profile'>🔒Profile</Link>
-            <Link to='/logout'>🔒Logout</Link>
+            <NavLink to='/profile' className={validateRoot}>🔒Profile </NavLink>
+            <NavLink to='/logout' onClick={logout} className={validateRoot}>🔒Logout</NavLink>
                </>
              ) : (
               <>
-              <Link to='/login'>🔐Login</Link>
-              <Link to='/register'>🔐Register</Link>
+              <NavLink to='/login' className={validateRoot}>🔐Login</NavLink>
+              <NavLink to='/register' className={validateRoot}>🔐Register</NavLink>
               </>
              )}
           </Nav>
             <div className='navtotal'>
                {/*Hito 1 - toLocaleString para mostrar número total*/}
-               <Link to='/cart'>🛒 Total: ${total.toLocaleString()}</Link>
+               <NavLink to='/cart' className={validateRoot}>🛒 Total: ${total.toLocaleString()}</NavLink>
             </div>
         </Container>
       </Navbar>

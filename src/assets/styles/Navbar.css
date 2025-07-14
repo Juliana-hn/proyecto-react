@@ -1,5 +1,8 @@
-.navbar a {
-    text-decoration: none;
-    color: inherit; 
-    margin-right: 10px
+.menu{
+  text-decoration: none;
+  color: inherit; 
   }
+.menuActive{
+  color: red;
+  text-decoration: none;
+}
